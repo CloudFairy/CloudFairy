@@ -2,14 +2,14 @@ class AppsController < ApplicationController
   before_action :set_app, only: [:show, :edit, :update, :destroy]
 
   def index
-    @apps = App.all
+    @apps = current_user.apps
   end
 
   def show
   end
 
   def new
-    @app = App.new
+    @app = App.new user: current_user
   end
 
   def edit

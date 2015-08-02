@@ -10,32 +10,33 @@ RSpec.describe AppsController, type: :controller do
   }
   let(:valid_session) { {} }
 
+  login_user
+  let(:app) { create :app, user: User.first }
+
   describe "GET #index" do
     it "assigns all apps as @apps" do
-      app = App.create! valid_attributes
-      get :index, {}, valid_session
+      create :app
+      get :index, {}
       expect(assigns(:apps)).to eq([app])
     end
   end
 
   describe "GET #show" do
     it "assigns the requested app as @app" do
-      app = App.create! valid_attributes
-      get :show, {:id => app.to_param}, valid_session
+      get :show, {:id => app.to_param}
       expect(assigns(:app)).to eq(app)
     end
   end
 
   describe "GET #new" do
     it "assigns a new app as @app" do
-      get :new, {}, valid_session
+      get :new, {}
       expect(assigns(:app)).to be_a_new(App)
     end
   end
 
   describe "GET #edit" do
     it "assigns the requested app as @app" do
-      app = App.create! valid_attributes
       get :edit, {:id => app.to_param}, valid_session
       expect(assigns(:app)).to eq(app)
     end

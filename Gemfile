@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'puma'
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
