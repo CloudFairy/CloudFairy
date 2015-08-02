@@ -1,0 +1,27 @@
+h1 Listing apps
+
+table
+  thead
+    tr
+      th User
+      th Name
+      th Server ip
+      th Server user
+      th
+      th
+      th
+
+  tbody
+    - @apps.each do |app|
+      tr
+        td = app.user
+        td = app.name
+        td = app.server_ip
+        td = app.server_user
+        td = link_to 'Show', app
+        td = link_to 'Edit', edit_app_path(app)
+        td = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New App', new_app_path
