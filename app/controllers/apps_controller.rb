@@ -16,7 +16,7 @@ class AppsController < ApplicationController
   end
 
   def create
-    @app = App.new(app_params)
+    @app = App.new(app_params.merge(user: current_user))
 
     respond_to do |format|
       if @app.save
@@ -55,6 +55,6 @@ class AppsController < ApplicationController
     end
 
     def app_params
-      params.require(:app).permit(:user_id, :name, :server_ip, :server_user)
+      params.require(:app).permit(:name, :server_ip, :server_user)
     end
 end
