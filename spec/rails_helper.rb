@@ -10,7 +10,9 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::TestHelpers, :type => :routing
   config.extend DeviseMacros, :type => :controller
+  config.extend DeviseMacros, :type => :routing
   config.infer_spec_type_from_file_location!
   config.use_transactional_fixtures = true
 
