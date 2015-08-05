@@ -25,6 +25,16 @@
 
 /*@import 'material-design-lite/src/material-design-lite';*/
 
+.main-action {
+  position: fixed;
+  display: block;
+  right: 0;
+  bottom: 0;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  z-index: 900;
+}
+
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
