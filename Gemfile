@@ -14,6 +14,7 @@ gem 'turbolinks'
 
 gem "slim-rails"
 gem 'jbuilder', '~> 2.0'
+gem "simple_form"
 
 gem 'puma'
 
