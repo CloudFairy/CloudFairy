@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.3'
 gem 'devise'
 gem 'sqlite3'
+gem 'wicked'
 
 gem "bower-rails"
 gem 'therubyracer', platforms: :ruby

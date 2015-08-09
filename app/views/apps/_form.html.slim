@@ -1,0 +1,20 @@
+.mdl-grid
+  .mdl-cell.mdl-cell--2-col
+  .mdl-cell.mdl-cell--8-col.mdl-card.mdl-shadow--2dp
+    = simple_form_for @app, defaults: { wrapper_html: { class: 'mdl-textfield mdl-js-textfield mdl-textfield--floating-label' }, input_html: {class: 'mdl-textfield__input'}, label_html: {class: 'mdl-textfield__label'} } do |f|
+      .mdl-card__title
+        h1 = locals[:title]
+      .mdl-card__supporting-text
+        .mdl-grid
+          .mdl-cell.mdl-cell--12-col.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
+            = f.input :name
+          .mdl-cell.mdl-cell--4-col.mdl-cell--3-col-tablet.mdl-cell--2-col-phone
+            = f.input :server_user
+          .mdl-cell.mdl-cell--8-col.mdl-cell--5-col-tablet.mdl-cell--2-col-phone
+            = f.input :server_ip
+        .mdl-grid
+          .mdl-cell.mdl-cell--9-col
+            | ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMNM7r+j4qt3fjAZFdLg9QyQov34QljJ6nDrS1ji/SVMJF5S8GhqN5b3W5UvgAAdI6lPquYD4DPV0ISRLywEo9ZDlTgDAx+/Lw+eCUaBdOSYRlQhvV1ppUfM0mzzPDyi9Qyq5/ZVAnpLWk4jYUYA4ogD1MhwMNKdjn5g9zIQBjkS7CGKIlsE1d7/geccf2x+whPDTAEppB/dE8+aIT6opDYf3vsTv/kHXzGPUQdSBJ2ItNoSd7DSEl//ugQbaoDFviVbVmNjV3FdTXqVN1+yD9152yciPhR12D3YQbYbxj6Lb1Y1LlDYmr53XXPOB/Y/GniIKSOstqdREud9d8IJ39 me@sinisterlight.com
+      .mdl-card__actions
+        = f.button :submit, "submit", class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+        = link_to 'Back', apps_path, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"

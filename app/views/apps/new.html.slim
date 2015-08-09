@@ -1,17 +1,1 @@
-.mdl-grid
-  .mdl-cell.mdl-cell--2-col
-  .mdl-cell.mdl-cell--8-col.mdl-card.mdl-shadow--2dp
-    = simple_form_for @app do |f|
-      .mdl-card__title
-        h1 New app
-      .mdl-card__supporting-text
-        = f.input :name
-        = f.input :server_ip
-        = f.input :server_user
-        .mdl-grid
-          .mdl-cell.mdl-cell--0-col
-          .mdl-cell.mdl-cell--9-col
-            | ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMNM7r+j4qt3fjAZFdLg9QyQov34QljJ6nDrS1ji/SVMJF5S8GhqN5b3W5UvgAAdI6lPquYD4DPV0ISRLywEo9ZDlTgDAx+/Lw+eCUaBdOSYRlQhvV1ppUfM0mzzPDyi9Qyq5/ZVAnpLWk4jYUYA4ogD1MhwMNKdjn5g9zIQBjkS7CGKIlsE1d7/geccf2x+whPDTAEppB/dE8+aIT6opDYf3vsTv/kHXzGPUQdSBJ2ItNoSd7DSEl//ugQbaoDFviVbVmNjV3FdTXqVN1+yD9152yciPhR12D3YQbYbxj6Lb1Y1LlDYmr53XXPOB/Y/GniIKSOstqdREud9d8IJ39 me@sinisterlight.com
-      .mdl-card__actions
-        = f.button :submit, "submit", class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-        = link_to 'Back', apps_path, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+= render 'form', :locals => {:title => 'New App'}
