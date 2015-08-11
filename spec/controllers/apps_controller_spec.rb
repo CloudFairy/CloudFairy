@@ -54,7 +54,7 @@ RSpec.describe AppsController, type: :controller do
 
       it "redirects to the created app" do
         post :create, {:app => valid_attributes}
-        expect(response).to redirect_to(App.last)
+        expect(response).to redirect_to(app_setup_index_path)
       end
     end
 
@@ -88,7 +88,7 @@ RSpec.describe AppsController, type: :controller do
 
       it "redirects to the app" do
         put :update, {:id => app.to_param, :app => valid_attributes}
-        expect(response).to redirect_to(app)
+        expect(response).to redirect_to(app_setup_index_path)
       end
     end
 

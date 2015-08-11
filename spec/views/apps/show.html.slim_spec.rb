@@ -2,12 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "apps/show", type: :view do
   before(:each) do
-    @app = assign(:app, App.create!(
-      :user => nil,
-      :name => "Name",
-      :server_ip => "Server Ip",
-      :server_user => "Server User"
-    ))
+    @app = create(:app)
   end
 
   it "renders attributes in <p>" do

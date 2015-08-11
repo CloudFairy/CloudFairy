@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150802115011) do
+ActiveRecord::Schema.define(version: 20150809161118) do
 
   create_table "apps", force: :cascade do |t|
     t.integer  "user_id"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20150802115011) do
     t.string   "server_user"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.text     "dockerfile"
+    t.string   "database"
   end
 
   add_index "apps", ["user_id"], name: "index_apps_on_user_id"

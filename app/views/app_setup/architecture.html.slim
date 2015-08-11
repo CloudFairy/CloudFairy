@@ -1,0 +1,13 @@
+.mdl-grid
+  .mdl-cell.mdl-cell--2-col
+  .mdl-cell.mdl-cell--8-col.mdl-card.mdl-shadow--2dp
+    = simple_form_for @app, url: wizard_path, defaults: { wrapper_html: { class: 'mdl-textfield mdl-js-textfield mdl-textfield--floating-label' }, input_html: {class: 'mdl-textfield__input'}, label_html: {class: 'mdl-textfield__label'} } do |f|
+      .mdl-card__title
+        h1 Architecture
+      .mdl-card__supporting-text
+        .mdl-grid
+          .mdl-cell.mdl-cell--12-col.mdl-cell--8-col-tablet.mdl-cell--4-col-phone
+            = f.input :database
+      .mdl-card__actions
+        = f.button :submit, "submit", class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+        = link_to 'Back', apps_path, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
