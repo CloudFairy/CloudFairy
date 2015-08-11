@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   authenticate :user do
     resources :apps
     resources :app_setup
+    root to: "apps#index", as: :authenticated_root
   end
-  root to: "home#index"
+  authenticate :user do
+    root to: "home#index", as: :unauthenticated_root
+  end
 end
