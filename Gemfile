@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.3'
 gem 'devise'
-gem 'sqlite3'
 gem 'wicked'
+gem 'pg', group: :production
 
 gem "bower-rails"
 gem 'therubyracer', platforms: :ruby
@@ -20,6 +20,7 @@ gem "simple_form"
 gem 'puma'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'byebug'
